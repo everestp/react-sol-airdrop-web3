@@ -3,3 +3,52 @@
     flex: row;
     justify-content: space-between;
 }
+
+.airdrop-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fefefe;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .airdrop-title {
+    font-size: 18px;
+    color: #5b21b6;
+    margin-bottom: 20px;
+  }
+  
+  .airdrop-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .airdrop-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5b21b6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .airdrop-button:hover {
+    background-color: #4c1d95;
+  }
+  
+  .airdrop-status {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
