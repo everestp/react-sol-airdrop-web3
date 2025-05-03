@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useConnection } from '@solana/wallet-adapter-react';
+import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { PublicKey } from '@solana/web3.js';
 
 const Airdrop = () => {
@@ -8,7 +8,7 @@ const Airdrop = () => {
   const amountRef = useRef();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
-
+const wallet = useWallet()
   const sendAirDropToUser = async () => {
     const address = publicKeyRef.current.value.trim();
     const amount = parseFloat(amountRef.current.value);
@@ -45,6 +45,7 @@ const Airdrop = () => {
         ref={publicKeyRef}
         type="text"
         placeholder="Your Solana Wallet Address"
+        value={wallet.publicKey}
         className="airdrop-input"
       />
       <button
