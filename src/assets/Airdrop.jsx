@@ -8,7 +8,8 @@ const Airdrop = () => {
   const amountRef = useRef();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
-const wallet = useWallet()
+  const wallet = useWallet();
+
   const sendAirDropToUser = async () => {
     const address = publicKeyRef.current.value.trim();
     const amount = parseFloat(amountRef.current.value);
@@ -35,19 +36,22 @@ const wallet = useWallet()
   return (
     <div className="airdrop-container">
       <h1 className="airdrop-title">Hey Blockchain Dev! Grab Some Free Devnet SOL 🚀</h1>
+
       <input
         ref={amountRef}
         type="number"
         placeholder="Amount in SOL"
         className="airdrop-input"
       />
+
       <input
         ref={publicKeyRef}
         type="text"
         placeholder="Your Solana Wallet Address"
-        value={wallet.publicKey}
+        defaultValue={wallet.publicKey?.toBase58() || ''}
         className="airdrop-input"
       />
+
       <button
         onClick={sendAirDropToUser}
         disabled={loading}
@@ -55,7 +59,21 @@ const wallet = useWallet()
       >
         {loading ? 'Sending...' : 'Send Airdrop'}
       </button>
+
       {status && <p className="airdrop-status">{status}</p>}
+
+      {/* Footer */}
+      <p className="airdrop-status mt-4">
+        Developed by Everest Paudel ·{' '}
+        <a
+          href="https://x.com/everestpaudel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Follow on X
+        </a>
+      </p>
     </div>
   );
 };
